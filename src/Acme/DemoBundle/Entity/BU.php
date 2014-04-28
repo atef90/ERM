@@ -10,8 +10,14 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity
  */
-class Post
+class BU
 {
+    /** 
+    * @ORM\ManyToOne(targetEntity="Acme\DemoBundle\Entity\BA", inversedBy="bas") 
+    * @ORM\JoinColumn(nullable=false) */ 
+     private $ba;
+
+
     /**
      * @var integer
      *
@@ -26,7 +32,14 @@ class Post
      *
      * @ORM\Column(name="Nom_BA", type="string", length=255)
      */
-    private $nomBA;
+    private $nomBU;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="service", type="string", length=255)
+     */
+    private $service;
 
     /**
      * @var \DateTime
@@ -52,22 +65,45 @@ class Post
      * @param string $nomBA
      * @return Post
      */
-    public function setNomBA($nomBA)
+    public function setNomBU($nomBU)
     {
-        $this->nomBA = $nomBA;
+        $this->nomBU = $nomBU;
 
         return $this;
     }
-
     /**
      * Get nomBA
      *
      * @return string 
      */
-    public function getNomBA()
+    public function getNomBU()
     {
-        return $this->nomBA;
+        return $this->nomBU;
     }
+    
+    /**
+     * Set service
+     *
+     * @param string $service
+     * @return Post
+     */
+    public function setService($service)
+    {
+        $this->service = $service;
+
+        return $this;
+    }
+    /**
+     * Get service
+     *
+     * @return string 
+     */
+    public function getService()
+    {
+        return $this->service;
+    }
+
+    
 
     /**
      * Set dateCreation
@@ -91,4 +127,35 @@ class Post
     {
         return $this->dateCreation;
     }
+
+    
+
+    /**
+     * Set ba
+     *
+     * @param \Acme\DemoBundle\Entity\BA $ba
+     * @return BU
+     */
+    public function setBa(\Acme\DemoBundle\Entity\BA $ba)
+    {
+        $this->ba = $ba;
+
+        return $this;
+    }
+
+    /**
+     * Get ba
+     *
+     * @return \Acme\DemoBundle\Entity\BA 
+     */
+    public function getBa()
+    {
+        return $this->ba;
+    }
+
+    public function __toString()
+   {
+    return $this->nomBU;
+   }
+
 }

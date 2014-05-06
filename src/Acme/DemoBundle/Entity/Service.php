@@ -118,4 +118,8 @@ class Service
     {
         return $this->bu;
     }
+    public function __toString()
+   {
+    return $this->nameService;
+   }
 }

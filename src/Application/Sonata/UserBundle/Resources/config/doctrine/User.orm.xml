@@ -9,7 +9,10 @@
         <id name="id" column="id" type="integer">
             <generator strategy="AUTO" />
         </id>
-
+        <field name="matricule" column="matricule" type="text"/>
+        <field name="diploma" column="diploma" type="text"/>
+        <field name="specialtyDiploma" column="specialtyDiploma" type="text"/>
+        <field name="currentFunction" column="currentFunction" type="text"/>
     </entity>
 
 </doctrine-mapping>

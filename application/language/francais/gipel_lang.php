@@ -1,0 +1,233 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+/* ##################################################################
+----------		LANGUAGE :: gipel_lang [fr = français]		  ----------
+----------		version  :: 2013-10-15							  ----------
+################################################################## */
+
+$lang['action_add_group']				= "Ajouter un groupe";
+$lang['action_add_group_in']			= "Ajouter un groupe dans :";
+$lang['action_change_password']		= "Changer mon mot de passe";
+$lang['action_change_photo']			= "Changer la photo";
+$lang['action_delete']					= "Supprimer";
+$lang['action_delete_group']			= "Supprimer le groupe";
+$lang['action_edit']						= "Modifier";
+$lang['action_edit_my_account']		= "Editer mon compte";
+$lang['action_first']					= "Première page";
+$lang['action_last']						= "Dernière page";
+$lang['action_next']						= "Page suivante";
+$lang['action_open_popup']				= "Ouvrir la page en popup";
+$lang['action_open_newtab']			= "Ouvrir la page dans un nouvel onglet";
+$lang['action_previous']				= "Page précédante";
+$lang['action_print_etic']				= "Imprimer une étiquette d'expédition";
+$lang['action_print_note']				= "Imprimer la note";
+$lang['action_show_detail']			= "Afficher les détails";
+$lang['action_show_history']			= "Afficher l'historique";
+$lang['action_show_gmap']				= "Afficher le plan Google Map";
+$lang['action_upload_photo']			= "Téléverser une photo";
+
+$lang['error_admin_undeletable']				= "<strong>Erreur</strong> : vous êtes en train de vouloir supprimer votre propre compte !";
+$lang['error_admin_not_updatable']			= "<strong>Erreur</strong> : les droits de l'administrateur ne peuvent pas être modifiés !";
+$lang['error_already_existing']				= "<strong>Erreur</strong> : cet enregistrement existe déja !";
+$lang['error_delete_group']					= "La suppression de ce groupe est interdite.<br />";
+$lang['error_forbidden_access']				= "Passez votre chemin ! Vous n'avez rien à faire ici !";
+$lang['error_forbidden_delete']				= "Cet enregistrement est personnel et ne vous appartient pas.<br />Seul son propriétaire ou l'administrateur peuvent le supprimer !";
+$lang['error_group_linked_to']				= " enregistrements (ou plus) sont liés à ce groupe (voir liste).<br />Il faut d'abord réaffecter chacun de ces enregistrements.";
+$lang['error_invalid_user']					= "<strong>Erreur</strong> : Cet identifiant n'existe pas !";
+$lang['error_occurred']							= "Une erreur est survenue !";
+$lang['error_password_mismatch']				= "<strong>Erreur</strong> : Le mot de passe est incorrect !";
+$lang['error_user_existing']					= "<strong>Erreur</strong> : ce nom est déja utilisé !";
+
+$lang['info_confidentiality']				= "Confidentialité : ";
+$lang['info_doc_date']						= "Date de parution :<br />";
+$lang['info_doc_name']						= "Nom du document :<br />";
+$lang['info_doc_version']					= "Version du document :<br />";
+$lang['info_fax']								= "<em> &nbsp; [-fax-]</em>";
+$lang['info_group_is_deletable']			= "Aucun enregistrement ne fait référence à ce groupe.<br />Sa suppression est donc possible.";
+$lang['info_has_been_added']				= "</strong><br />a bien été ajouté(e).";
+$lang['info_has_been_deleted']			= "</strong><br />a bien été supprimé(e).";
+$lang['info_has_been_updated']			= "</strong><br />a bien été modifé(e).";
+$lang['info_home']							= "<em> &nbsp; (domicile)</em>";
+$lang['info_ip_address']					= "Adresse IP";
+$lang['info_last_activity']				= "Dernière activité";
+$lang['info_maked_on']						= "Créé le : ";
+$lang['info_mobile']							= "<em> &nbsp; (mobile)</em>";
+$lang['info_new_keywords_saved']			= "Les nouveaux mots-clé ont bien été enregistrés.";
+$lang['info_new_wording_saved']			= "Le nouveau libellé a bien été enregistré.";
+$lang['info_no_update']						= "Aucune modification effectuée !";
+$lang['info_not_filled']					= "non renseigné";
+$lang['info_office']							= "<em> &nbsp; (bureau)</em>";
+$lang['info_page_rendered_in']			= "Page préparée en ";
+$lang['info_password_changed_on']		= "Changement de mot de passe le : ";
+$lang['info_password_updated_good']		= "Votre mot de passe a bien été modifié !";
+$lang['info_photo_also_deleted']			= "La photo associée a également été supprimée.";
+$lang['info_photo_uploaded_good']		= "Votre photo a bien été téléversée.";
+$lang['info_popularity']					= "Indice de popularité : ";
+$lang['info_popup_setting']				= "Règlage pour afficher en pop-up<br />(Largeur/Hauteur) :<br />";
+$lang['info_previous_photo_deleted']	= "La photo précédente a été effacée.";
+$lang['info_ranked_in_group']				= "<em> &nbsp; Rangé dans le groupe : </em>";
+$lang['info_revised_on']					= "Modifié le : ";
+$lang['info_session_expired']				= "Votre session a expiré !";
+$lang['info_site_name']						= "Nom du site :<br />";
+$lang['info_site_doc_url']					= "URL du site ou du document :<br />";
+$lang['info_the_account']					= "Le compte <strong>";
+$lang['info_the_document']					= "Le document <strong>";
+$lang['info_the_group']						= "Le groupe <strong>";
+$lang['info_the_note']						= "La note <strong>";
+$lang['info_the_people']					= "La personne <strong>";
+$lang['info_the_site']						= "Le site <strong>";
+$lang['info_unavailable']					= "indisponible";
+$lang['info_your_account']					= "Votre compte <strong>";
+
+$lang['item_addressbook']			= "Carnet d'adresses";
+$lang['item_document']				= "Documents";
+$lang['item_notebook']				= "Bloc-notes";
+$lang['item_record']					= "enregistrement";
+$lang['item_records']				= "enregistrements";
+$lang['item_site-login']			= "Sites web et Logins";
+
+$lang['label_adress1']					= "Adresse";
+$lang['label_adress2']					= "Adresse (complément)";
+$lang['label_birthday']					= "Date de naissance";
+$lang['label_city']						= "Ville";
+$lang['label_comment']					= "Texte du commentaire";
+$lang['label_confirm_it']				= "Confirmez-le";
+$lang['label_country']					= "Pays";
+$lang['label_current_password']		= "Mot de passe actuel";
+$lang['label_direction']				= "Ordre de sortie";
+$lang['label_doc_date']					= "Date de parution";
+$lang['label_doc_name']					= "Nom du document";
+$lang['label_doc_url']					= "URL du document";
+$lang['label_doc_version']				= "Version du document";
+$lang['label_email']						= "Courriel";
+$lang['label_fax']						= "Télécopieur (Fax)";
+$lang['label_first_name']				= "Prénom";
+$lang['label_gmap']						= "Plan Google Map";
+$lang['label_group']						= "Groupe";
+$lang['label_last_name']				= "Nom";
+$lang['label_memo']						= "Commentaire (texte libre)";
+$lang['label_new_group']				= "Libellé du nouveau groupe :";
+$lang['label_new_password']			= "Nouveau mot de passe";
+$lang['label_note']						= "Texte de la note";
+$lang['label_note_title']				= "Titre";
+$lang['label_password']					= "Mot de passe";
+$lang['label_phone']						= "Téléphone";
+$lang['label_phone_cell']				= "Téléphone (Portable)";
+$lang['label_phone_home']				= "Téléphone (Domicile)";
+$lang['label_phone_work']				= "Téléphone (Bureau) ";
+$lang['label_popup_height']			= "Hauteur pop-up";
+$lang['label_popup_width']				= "Largeur pop-up";
+$lang['label_postcode']					= "Code postal";
+$lang['label_radio_asc']				= "Ascendant";
+$lang['label_radio_communal']			= " &nbsp; &nbsp; Communautaire";
+$lang['label_radio_desc']				= " &nbsp; &nbsp; Descendant";
+$lang['label_radio_m_on']				= "Date de création";
+$lang['label_radio_miss']				= "Mlle";
+$lang['label_radio_mr']					= "Mr";
+$lang['label_radio_mrs']				= "Mme";
+$lang['label_radio_personal']			= "Personnel";
+$lang['label_radio_r_on']				= "Date de modification";
+$lang['label_radio_ReadOnly']			= " &nbsp; &nbsp; Lecture seule";
+$lang['label_radio_ReadWrite']		= "Lecture ET écriture";
+$lang['label_run_search']				= "Lancer la recherche";
+$lang['label_save']						= " Enregistrer ";
+$lang['label_search']					= "Chercher ...";
+$lang['label_select_file']				= "Sélectionnez le fichier dans votre ordinateur";
+$lang['label_send']						= " Envoyer ";
+$lang['label_site_name']				= "Nom du site";
+$lang['label_site_url']					= "URL du site";
+$lang['label_sorted_by']				= "Trier par";
+$lang['label_sticker']					= "Etiquette : ";
+$lang['label_title']						= "Civilité";
+$lang['label_update']					= "Mettre à jour";
+$lang['label_user_email']				= "Identifiant (email)";
+$lang['label_user_rights']				= "Droits de l'utilisateur";
+$lang['label_username']					= "Identifiant";
+$lang['label_validate']					= "Valider la saisie";
+$lang['label_visibility']				= "Contrôle d'accès";
+
+$lang['legende_login']						= "Merci de vous identifier";
+$lang['legende_my_datas']					= "Mes informations";
+$lang['legende_my_password']				= "Mon mot de passe";
+$lang['legende_record_content']			= "Contenu de l'enregistrement";
+$lang['legende_search_criteria']			= "Critères de recherche";
+$lang['legende_user_infos']				= "Informations utilisateur";
+
+$lang['menu_add_record']				= " Ajouter un enregistrement dans : ";
+$lang['menu_deep_search']				= " Effectuer une recherche avancée dans : ";
+$lang['menu_manage_groups']			= " Gérer les groupes pour : ";
+
+$lang['nav_about_gipel']				= "A propos de l'application GIPel";
+$lang['nav_create_account']			= "Créer un compte";
+$lang['nav_logout']						= "Déconnexion";
+$lang['nav_manage_accounts']			= "Gérer les comptes";
+$lang['nav_misc_calendar']				= "Afficher le calendrier";
+$lang['nav_misc_password']				= "Générer un mot de passe";
+$lang['nav_misc_special_chars']		= "Quelques caractères spéciaux";
+$lang['nav_under_construction']		= "En cours de développement";
+$lang['nav_section_admin']				= "Section Administration";
+$lang['nav_section_bank']				= "Section Gestion bancaire";
+$lang['nav_section_misc']				= "Section Divers";
+$lang['nav_section_records']			= "Section Enregistrements";
+$lang['nav_who_is_online']				= "Qui est en ligne ?";
+
+$lang['search_any_one']					= "----- N'importe lequel -----";
+$lang['search_nothing_found']			= "Aucun résultat n'a été trouvé !";
+$lang['search_result']					= "Résultat de recherche";
+
+$lang['synthesis_global']				= "Globalement";
+$lang['synthesis_most_recent']		= "Les plus récents";
+$lang['synthesis_most_visited']		= "Les plus consultés";
+
+$lang['title_add_record_in']				= "Ajouter un enregistrement dans : ";
+$lang['title_add_group_in']				= "Ajouter un groupe dans : ";
+$lang['title_deep_find']					= "Résultat de recherche avancée";
+$lang['title_deep_search']					= "Recherche avancée";
+$lang['title_detail_of']					= "<span class=\"gris_moyen\">Détail de : </span>";
+$lang['title_edit']							= "Modifier : ";
+$lang['title_group_wording_update']		= "Modifier le libellé d'un groupe";
+$lang['title_history_for']					= "historique pour : ";
+$lang['title_home_page']					= "Page d'accueil";
+$lang['title_manage_groups']				= "Gérer les groupes";
+$lang['title_set_rights']					= "Modifier les droits de : ";
+$lang['title_synthesis']					= "Synthèse des enregistrements";
+
+$lang['wording_404']									= "Oups... La page que vous avez demandé n'existe pas (ou n'existe plus).<br />Vous pouvez cliquer sur le logo ci-dessous pour revenir à la page d'accueil.";
+$lang['wording_after']								= "Après : ";
+$lang['wording_before']								= "Avant : ";
+$lang['wording_by']									= " par ";
+$lang['wording_caution_delete_request']		= "Vous avez demandé la suppression de cet enregistrement.<br />Cette action est irréversible.";
+$lang['wording_caution_photo_delete']			= "Attention !<br />Dès que vous aurez appuyé sur le bouton<br />« Envoyer », la photo actuelle sera effacée.";
+$lang['wording_current']							= "Libellé actuel : ";
+$lang['wording_current_keywords_are']			= "Les mots-clé pour cet enregistrement sont actuellement : ";
+$lang['wording_current_password_false']		= "Le mot de passe actuel est faux !";
+$lang['wording_demo_site']							= "<strong>Démonstration</strong> : Ce site est seulement un site de démonstration de l'application GIPel.<br />Certaines fonctionnalités ont été volontairement désactivées.";
+$lang['wording_fail_confirm_password']			= "Echec de la confirmation du nouveau mot de passe !";
+$lang['wording_here']								= "ici";
+$lang['wording_here_is_summary']					= "Voici un récapitulatif :";
+$lang['wording_identification']					= "--- Identification ---";
+$lang['wording_image_informations']				= "<strong>Nota :</strong><br />Les images doivent être au format jpg(jpeg), png ou gif.<br />Leur taille ne doit pas dépasser 40ko et :<br />- 270px en largeur<br />- 360px en hauteur<br />Si l'un de ces critères n'est pas respecté, la photo sera refusée.<br />La largeur idéale est : 135px ou 270px.<br />Pour créer facilement des images, vous pouvez utiliser avantageusement <a href=\"http://www.ceck.org/logiciels/windows/gadwin-printscreen/\" target=\"_blank\" title=\"Gadwin PrintScreen\">Gadwin PrintScreen</a>, simple et gratuit.";
+$lang['wording_info_document']					= "Document";
+$lang['wording_info_login']						= "Informations login";
+$lang['wording_keywords']							= "Mots clé : ";
+$lang['wording_keywords_for']						= "Mots clé pour : ";
+$lang['wording_keywords_informations']			= "<strong>Nota :</strong><br />Les mots-clé doivent être séparés par un espace. Ils peuvent être entrés indifféremment en minuscule ou en MAJUSCULE. Les caractères accentués sont admis mais ne seront pas pris en compte lors des recherches. Exemple : é, è et ê seront interprétés comme e.";
+$lang['wording_line_deleted']						= "Cette ligne a bien été supprimée.";
+$lang['wording_new']									= "Nouveau libellé :";
+$lang['wording_password_informations']			= "<strong>Nota :</strong><br />Votre nouveau mot de passe doit :<br />- contenir au minimum 8 caractères (maximum : 16)<br />- utiliser uniquement les lettres (minuscules ou majuscules) de A à Z, les chiffres de 0 à 9 et les caractères _ -<br />Vous pourrez utiliser votre nouveau mot de passe lors de votre prochaine identification.";
+$lang['wording_please_click']						= "Veuillez cliquer ";
+$lang['wording_recipient']							= "Destinataire";
+$lang['wording_remains']							= "reste";
+$lang['wording_seconds']							= " secondes";
+$lang['wording_see_more']							= "En voir plus ...";
+$lang['wording_sender']								= "Expéditeur";
+$lang['wording_sender_informations']			= "<strong>Nota :</strong><br />Les informations figurant dans ce formulaire serviront à établir l'adresse de l'expéditeur si vous imprimez une étiquette d'expédition à partir du carnet d'adresses.";
+$lang['wording_session_id_has_changed']		= "Cet identifiant de session n'est plus valide.";
+$lang['wording_to_confirm']						= " pour confirmer.";
+$lang['wording_use_this_form_to_update']		= "Vous pouvez les modifier au moyen de ce formulaire :";
+$lang['wording_user_creation_infos']			= "<strong>Nota :</strong><br />Un mot de passe provisoire est attribué lors de la création d'un utilisateur.<br />Ce mot de passe est défini par la variable \$config['appli_provisory_password']<br />dans le fichier ./application/config/appli.php.<br />L'utilisateur doit ensuite le modifier et compléter ses informations.";
+
+
+
+/* End of file gipel_lang.php */
+/* Location: ./application/language/francais/gipel_lang.php */

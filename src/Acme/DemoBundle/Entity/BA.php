@@ -29,16 +29,16 @@ class BA
     /**
      * @var string
      *
-     * @ORM\Column(name="Nom_BA", type="string", length=255)
+     * @ORM\Column(name="Name_BA", type="string", length=255)
      */
-    private $nomBA;
+    private $nameBA;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="Date_Creation", type="date")
+     * @ORM\Column(name="created_at", type="date")
      */
-    private $dateCreation;
+    private $createdAt;
 
 
     /**
@@ -52,49 +52,49 @@ class BA
     }
 
     /**
-     * Set nomBA
+     * Set nameBA
      *
-     * @param string $nomBA
+     * @param string $nameBA
      * @return Post
      */
-    public function setNomBA($nomBA)
+    public function setNameBA($nameBA)
     {
-        $this->nomBA = $nomBA;
+        $this->nameBA = $nameBA;
 
         return $this;
     }
 
     /**
-     * Get nomBA
+     * Get nameBA
      *
      * @return string 
      */
-    public function getNomBA()
+    public function getNameBA()
     {
-        return $this->nomBA;
+        return $this->nameBA;
     }
 
     /**
-     * Set dateCreation
+     * Set createdAt
      *
-     * @param \DateTime $dateCreation
+     * @param \DateTime $createdAt
      * @return Post
      */
-    public function setDateCreation($dateCreation)
+    public function setCreatedAt($createdAt)
     {
-        $this->dateCreation = $dateCreation;
+        $this->createdAt = $createdAt;
 
         return $this;
     }
 
     /**
-     * Get dateCreation
+     * Get createdAt
      *
      * @return \DateTime 
      */
-    public function getDateCreation()
+    public function getCreatedAt()
     {
-        return $this->dateCreation;
+        return $this->createdAt;
     }
     
     /**
@@ -103,6 +103,7 @@ class BA
     public function __construct()
     {
         $this->bus = new \Doctrine\Common\Collections\ArrayCollection();
+       
     }
 
     /**
@@ -140,6 +141,8 @@ class BA
 
     public function __toString()
    {
-    return $this->nomBA;
+    return $this->nameBA;
    }
+
+
 }

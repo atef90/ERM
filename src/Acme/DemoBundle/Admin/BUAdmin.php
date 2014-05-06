@@ -15,11 +15,10 @@ class BUAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('nomBU', 'text')
-            ->add('service', 'text')
+            ->add('nameBU', 'text')
             ->add('BA', 'entity', array('class' => 'Acme\DemoBundle\Entity\BA'))
             //->add('dateCreation', 'entity', array('class' => 'Acme\DemoBundle\Entity\User'))
-            ->add('dateCreation') //if no type is specified, SonataAdminBundle tries to guess it
+            ->add('createdAt') //if no type is specified, SonataAdminBundle tries to guess it
 
         ;
     }
@@ -28,8 +27,8 @@ class BUAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('nomBU')
-            ->add('dateCreation')
+            ->add('nameBU')
+            ->add('createdAt')
         ;
     }
 
@@ -37,9 +36,9 @@ class BUAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('nomBU')
+            ->addIdentifier('nameBU')
             //->add('slug')
-            ->add('dateCreation')
+            ->add('createdAt')
             ->add('_action', 'actions', array('label'=>'action',
                 'actions' => array(
                     'view' => array(),
@@ -53,8 +52,8 @@ class BUAdmin extends Admin
     {
         $showMapper
             
-                ->add('nomBA')
-                ->add('dateCreation') 
+                ->add('nameBA')
+                ->add('createdAt') 
         ;
     }
 }

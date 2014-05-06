@@ -11,7 +11,10 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  */
 class Service
-{
+{   /** 
+    * @ORM\ManyToOne(targetEntity="Acme\DemoBundle\Entity\BU", inversedBy="bu") 
+    * @ORM\JoinColumn(nullable=false) */ 
+     private $bu;
     
     /**
      * @var integer
@@ -25,16 +28,16 @@ class Service
     /**
      * @var string
      *
-     * @ORM\Column(name="service", type="string", length=255)
+     * @ORM\Column(name="Name_Service", type="string", length=255)
      */
-    private $nomService;
+    private $nameService;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="Date_Creation", type="date")
+     * @ORM\Column(name="created_at", type="date")
      */
-    private $dateCreation;
+    private $createdAt;
 
 
     /**
@@ -48,14 +51,14 @@ class Service
     }
 
     /**
-     * Set Service
+     * Set nameService
      *
      * @param string $Service
      * @return Post
      */
-    public function setService($Service)
+    public function setNameService($nameService)
     {
-        $this->Service = $nomService;
+        $this->nameService = $nameService;
 
         return $this;
     }
@@ -65,33 +68,54 @@ class Service
      *
      * @return string 
      */
-    public function getService()
+    public function getNameService()
     {
-        return $this->nomService;
+        return $this->nameService;
     }
 
     /**
-     * Set dateCreation
+     * Set createdAt
      *
-     * @param \DateTime $dateCreation
+     * @param \DateTime $createdAt
      * @return Post
      */
-    public function setDateCreation($dateCreation)
+    public function setCreatedAt($createdAt)
     {
-        $this->dateCreation = $dateCreation;
+        $this->createdAt = $createdAt;
 
         return $this;
     }
 
     /**
-     * Get dateCreation
+     * Get createdAt
      *
      * @return \DateTime 
      */
-    public function getDateCreation()
+    public function getCreatedAt()
     {
-        return $this->dateCreation;
+        return $this->createdAt;
     }
     
-   
+    /**
+     * Set bu
+     *
+     * @param \Acme\DemoBundle\Entity\BU $bu
+     * @return Service
+     */
+    public function setBu(\Acme\DemoBundle\Entity\BU $bu)
+    {
+        $this->bu = $bu;
+
+        return $this;
+    }
+
+    /**
+     * Get bu
+     *
+     * @return \Acme\DemoBundle\Entity\BU 
+     */
+    public function getBu()
+    {
+        return $this->bu;
+    }
 }

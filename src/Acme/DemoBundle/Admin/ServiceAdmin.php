@@ -15,10 +15,10 @@ class ServiceAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('nomService', 'text')
-            //->add('BU', 'entity', array('class' => 'Acme\DemoBundle\Entity\BU'))
+            ->add('nameService', 'text')
+            ->add('BU', 'entity', array('class' => 'Acme\DemoBundle\Entity\BU'))
             //->add('dateCreation', 'entity', array('class' => 'Acme\DemoBundle\Entity\User'))
-            ->add('dateCreation') //if no type is specified, SonataAdminBundle tries to guess it
+            ->add('createdAt') //if no type is specified, SonataAdminBundle tries to guess it
 
         ;
     }
@@ -27,8 +27,8 @@ class ServiceAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('Service')
-            ->add('dateCreation')
+            ->add('nameService')
+            ->add('createdAt')
         ;
     }
 
@@ -36,9 +36,9 @@ class ServiceAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('Service')
+            ->addIdentifier('nameService')
             //->add('slug')
-            ->add('dateCreation')
+            ->add('createdAt')
             ->add('_action', 'actions', array('label'=>'action',
                 'actions' => array(
                     'view' => array(),
@@ -52,8 +52,8 @@ class ServiceAdmin extends Admin
     {
         $showMapper
             
-                ->add('Service')
-                ->add('dateCreation') 
+                ->add('nameService')
+                ->add('createdAt') 
         ;
     }
 }

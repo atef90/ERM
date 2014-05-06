@@ -30,23 +30,16 @@ class BU
     /**
      * @var string
      *
-     * @ORM\Column(name="Nom_BA", type="string", length=255)
+     * @ORM\Column(name="Name_BU", type="string", length=255)
      */
-    private $nomBU;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="service", type="string", length=255)
-     */
-    private $service;
+    private $nameBU;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="Date_Creation", type="date")
+     * @ORM\Column(name="created_at", type="date")
      */
-    private $dateCreation;
+    private $createdAt;
 
 
     /**
@@ -60,72 +53,52 @@ class BU
     }
 
     /**
-     * Set nomBA
+     * Set nameBU
      *
-     * @param string $nomBA
+     * @param string $nameBU
      * @return Post
      */
-    public function setNomBU($nomBU)
+    public function setNameBU($nameBU)
     {
-        $this->nomBU = $nomBU;
+        $this->nameBU = $nameBU;
 
         return $this;
     }
     /**
-     * Get nomBA
+     * Get nameBU
      *
      * @return string 
      */
-    public function getNomBU()
+    public function getNameBU()
     {
-        return $this->nomBU;
+        return $this->nameBU;
     }
     
-    /**
-     * Set service
-     *
-     * @param string $service
-     * @return Post
-     */
-    public function setService($service)
-    {
-        $this->service = $service;
-
-        return $this;
-    }
-    /**
-     * Get service
-     *
-     * @return string 
-     */
-    public function getService()
-    {
-        return $this->service;
-    }
+  
 
     
 
     /**
-     * Set dateCreation
+     * Set createdAt
      *
-     * @param \DateTime $dateCreation
+     * @param \DateTime $createdAt
      * @return Post
      */
-    public function setDateCreation($dateCreation)
+    public function setCreatedAt($createdAt)
     {
-        $this->dateCreation = $dateCreation;
+        $this->createdAt = $createdAt;
 
         return $this;
     }
 
     /**
-     * Get dateCreation
+     * Get createdAt
      *
      * @return \DateTime 
      */
-    public function getDateCreation()
+    public function getCreatedAt()
     {
-        return $this->dateCreation;
+        return $this->createdAt;
     }
 
     
@@ -155,7 +128,7 @@ class BU
 
     public function __toString()
    {
-    return $this->nomBU;
+    return $this->nameBU;
    }
 
 }

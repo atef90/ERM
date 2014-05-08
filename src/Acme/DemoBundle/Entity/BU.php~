@@ -13,7 +13,13 @@ use Doctrine\ORM\Mapping as ORM;
 class BU
 {
     /** 
-    * @ORM\ManyToOne(targetEntity="Acme\DemoBundle\Entity\BA", inversedBy="bas") 
+    * @ORM\OneToMany(targetEntity="Acme\DemoBundle\Entity\Service", mappedBy="bu") 
+    * @ORM\JoinColumn(nullable=false)
+    */ 
+    private $service;
+
+    /** 
+    * @ORM\ManyToOne(targetEntity="Acme\DemoBundle\Entity\BA",inversedBy="bus") 
     * @ORM\JoinColumn(nullable=false) */ 
      private $ba;
 
@@ -30,24 +36,16 @@ class BU
     /**
      * @var string
      *
-     * @ORM\Column(name="Nom_BA", type="string", length=255)
+     * @ORM\Column(name="Name_BU", type="string", length=255)
      */
-    private $nomBU;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="service", type="string", length=255)
-     */
-    private $service;
+    private $nameBU;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="Date_Creation", type="date")
+     * @ORM\Column(name="created_at", type="date")
      */
-    private $dateCreation;
-
+    private $createdAt;
 
     /**
      * Get id
@@ -60,73 +58,115 @@ class BU
     }
 
     /**
-     * Set nomBA
+     * Set nameBU
      *
-     * @param string $nomBA
+     * @param string $nameBU
      * @return Post
      */
-    public function setNomBU($nomBU)
+    public function setNameBU($nameBU)
     {
-        $this->nomBU = $nomBU;
+        $this->nameBU = $nameBU;
 
         return $this;
     }
     /**
-     * Get nomBA
+     * Get nameBU
      *
      * @return string 
      */
-    public function getNomBU()
+    public function getNameBU()
     {
-        return $this->nomBU;
+        return $this->nameBU;
     }
     
+  
+
+    
+
     /**
-     * Set service
+     * Set createdAt
      *
-     * @param string $service
+     * @param \DateTime $createdAt
      * @return Post
      */
-    public function setService($service)
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime 
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    
+
+    /**
+     * Set ba
+     *
+     * @param \Acme\DemoBundle\Entity\BA $ba
+     * @return BU
+     */
+    public function setBa(\Acme\DemoBundle\Entity\BA $ba)
+    {
+        $this->ba = $ba;
+
+        return $this;
+    }
+
+    /**
+     * Get ba
+     *
+     * @return \Acme\DemoBundle\Entity\BA 
+     */
+    public function getBa()
+    {
+        return $this->ba;
+    }
+
+    public function setService(\Acme\DemoBundle\Entity\Service $service)
     {
         $this->service = $service;
 
         return $this;
     }
-    /**
-     * Get service
-     *
-     * @return string 
-     */
-    public function getService()
+     public function getService()
     {
         return $this->service;
     }
+    public function __toString()
+   {
+    return $this->nameBU;
+   }
 
-    
 
     /**
-     * Set dateCreation
+     * Add service
      *
-     * @param \DateTime $dateCreation
-     * @return Post
+     * @param \Acme\DemoBundle\Entity\Service $service
+     * @return BU
      */
-    public function setDateCreation($dateCreation)
+    public function addService(\Acme\DemoBundle\Entity\Service $service)
     {
-        $this->dateCreation = $dateCreation;
+        $this->service[] = $service;
 
         return $this;
     }
 
     /**
-     * Get dateCreation
+     * Remove service
      *
-     * @return \DateTime 
+     * @param \Acme\DemoBundle\Entity\Service $service
      */
-    public function getDateCreation()
+    public function removeService(\Acme\DemoBundle\Entity\Service $service)
     {
-        return $this->dateCreation;
+        $this->service->removeElement($service);
     }
-
-    
 }

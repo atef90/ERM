@@ -37,7 +37,7 @@ class ServiceAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('nameService')
-            //->add('slug')
+            ->add('bu')
             ->add('createdAt')
             ->add('_action', 'actions', array('label'=>'action',
                 'actions' => array(

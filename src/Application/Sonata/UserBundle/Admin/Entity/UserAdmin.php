@@ -30,7 +30,11 @@ class UserAdmin extends BaseUserAdmin
                 ->add('specialtyDiploma', 'text', array('label'=>'Speciality of Diploma','required' => true))
                 ->add('currentFunction', 'text', array('label'=>'Current Function','required' => true))
                 ->add('enabled', null, array('required' => false))
+            ->end()
+            ->with('BU', array('class' => 'col-md-6'))
                 ->add('BU', 'entity', array('label'=>'BU','class' => 'Acme\DemoBundle\Entity\BU'))
+            ->end()
+            ->with('Service', array('class' => 'col-md-6'))
                 ->add('Service', 'entity', array('label'=>'Service','class' => 'Acme\DemoBundle\Entity\Service'))
             ->end()
             ->with('Function', array('class' => 'col-md-6'))
@@ -83,7 +87,6 @@ class UserAdmin extends BaseUserAdmin
             ->add('lastname')
             ->add('locked')
             ->add('currentFunction')
-            
         ;
     }
 

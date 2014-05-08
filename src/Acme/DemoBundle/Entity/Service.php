@@ -39,7 +39,7 @@ class Service
      */
     private $createdAt;
 
-
+  
     /**
      * Get id
      *

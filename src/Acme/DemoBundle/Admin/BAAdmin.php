@@ -16,7 +16,6 @@ class BAAdmin extends Admin
     {
         $formMapper
             ->add('nameBA', 'text')
-            //->add('BU', 'entity', array('class' => 'Acme\DemoBundle\Entity\BU'))
             //->add('dateCreation', 'entity', array('class' => 'Acme\DemoBundle\Entity\User'))
             ->add('createdAt') //if no type is specified, SonataAdminBundle tries to guess it
 
@@ -37,7 +36,6 @@ class BAAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('nameBA')
-            //->add('slug')
             ->add('createdAt')
             ->add('_action', 'actions', array('label'=>'action',
                 'actions' => array(

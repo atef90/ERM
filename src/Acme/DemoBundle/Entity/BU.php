@@ -12,12 +12,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class BU
 {
-    
     /** 
     * @ORM\ManyToOne(targetEntity="Acme\DemoBundle\Entity\BA") 
     * @ORM\JoinColumn(nullable=false) */ 
      private $ba;
-
 
     /**
      * @var integer
@@ -41,7 +39,6 @@ class BU
      * @ORM\Column(name="created_at", type="date")
      */
     private $createdAt;
-
 
     /**
      * Get id
@@ -127,9 +124,9 @@ class BU
         return $this->ba;
     }
 
+    
     public function __toString()
    {
     return $this->nameBU;
    }
-
 }

@@ -17,7 +17,11 @@ class UserAdmin extends BaseUserAdmin
     {
         $formMapper
             ->with('General', array('class' => 'col-md-6'))
-                
+                ->add('username')
+                ->add('email')
+                ->add('plainPassword', 'text', array(
+                    'required' => (!$this->getSubject() || is_null($this->getSubject()->getId()))
+                   ))
                 ->add('firstname', 'text', array('required' => true))
                 ->add('lastname', 'text', array('required' => true))
                 ->add('createdAt','date', array('label'=>'Entered at'))
@@ -58,14 +62,14 @@ class UserAdmin extends BaseUserAdmin
             ->addIdentifier('username')
             ->add('firstname')
             ->add('lastname')
-            ->add('groups')
-            ->add('enabled', null, array('editable' => true))
             ->add('currentFunction',null,array('label'=>'Current function'))
+            ->add('bu',null,array('label'=>'BU'))
+            ->add('service',null,array('label'=>'Service','editable' => true))
+            ->add('enabled', null, array('editable' => true))
             ->add('_action', 'actions', array('label'=>'action',
                 'actions' => array(
                     'view' => array(),
                     'edit' => array(),
-                    'delete' => array(),
                 )
             ))
         ;

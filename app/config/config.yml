@@ -105,7 +105,7 @@ sonata_user:
     manager_type: orm # can be orm or mongodb
     admin:                  # Admin Classes
         user:
-            class:          Application\Sonata\UserBundle\Admin\Entity\UserAdmin
+            class: Application\Sonata\UserBundle\Admin\Entity\UserAdmin
     
         
 

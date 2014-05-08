@@ -11,11 +11,11 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  */
 class Service
-{   /** 
-    * @ORM\ManyToOne(targetEntity="Acme\DemoBundle\Entity\BU", inversedBy="bu") 
+{   
+    /** 
+    * @ORM\ManyToOne(targetEntity="Acme\DemoBundle\Entity\BU") 
     * @ORM\JoinColumn(nullable=false) */ 
      private $bu;
-    
     /**
      * @var integer
      *

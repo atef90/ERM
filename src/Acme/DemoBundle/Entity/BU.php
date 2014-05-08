@@ -12,8 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class BU
 {
+    
     /** 
-    * @ORM\ManyToOne(targetEntity="Acme\DemoBundle\Entity\BA", inversedBy="bas") 
+    * @ORM\ManyToOne(targetEntity="Acme\DemoBundle\Entity\BA") 
     * @ORM\JoinColumn(nullable=false) */ 
      private $ba;
 

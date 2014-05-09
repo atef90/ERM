@@ -32,12 +32,22 @@ class UserAdmin extends BaseUserAdmin
                 ->add('enabled', null, array('required' => false))
             ->end()
             ->with('BU', array('class' => 'col-md-6'))
-                ->add('BU', 'entity', array('label'=>'BU','class' => 'Acme\DemoBundle\Entity\BU'))
+                ->add('bu', 'sonata_type_model',array('label'=>'Business Unit'),
+                        array(
+                            'attr'=>array('data-sonata-select2'=>'true')
+                        )
+                    )
             ->end()
             ->with('Service', array('class' => 'col-md-6'))
-                ->add('Service', 'entity', array('label'=>'Service','class' => 'Acme\DemoBundle\Entity\Service'))
+            ->add('service', 'sonata_type_model',array('label'=>'Service'),
+                        array(
+                            'attr'=>array('data-sonata-select2'=>'true')
+                        )
+                    )
+                //->add('Service', 'entity', array('label'=>'Service','class' => 'Acme\DemoBundle\Entity\Service'))
             ->end()
-            ->with('Function', array('class' => 'col-md-6'))
+          
+
         ;    
     }
      protected function configureShowFields(ShowMapper $showMapper)

@@ -4,11 +4,9 @@ namespace Application\Sonata\UserBundle\Entity;
 
 use Sonata\UserBundle\Entity\BaseUser as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
-
 class User extends BaseUser
 {  
-    
-     private $service;
+    private $service;
     
      private $bu;
     /**
@@ -83,6 +81,52 @@ public function getService()
     {
         return $this->service;
     }
+    
+   
+   
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->userFunction = new \Doctrine\Common\Collections\ArrayCollection();
+      
+    }
+
+    /**
+     * Add userFunction
+     *
+     * @param \Acme\DemoBundle\Entity\UserFunction $userFunction
+     * @return User
+     */
+    public function addUserFunction(\Acme\DemoBundle\Entity\UserFunction $userFunction)
+    {
+        $this->userFunction[] = $userFunction;
+
+        return $this;
+    }
+
+    /**
+     * Remove userFunction
+     *
+     * @param \Acme\DemoBundle\Entity\UserFunction $userFunction
+     */
+    public function removeUserFunction(\Acme\DemoBundle\Entity\UserFunction $userFunction)
+    {
+        $this->userFunction->removeElement($userFunction);
+    }
+
+    /**
+     * Get userFunction
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getUserFunction()
+    {
+        return $this->userFunction;
+    }
+
+    
+    
 }
-
-

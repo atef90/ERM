@@ -30,7 +30,7 @@
               <argument>AcmeDemoBundle</argument>
           </call>
       </service>
-           <service id="sonata.admin.function" class="Acme\DemoBundle\Admin\FunctionAdmin">
+           <service id="sonata.admin.currentfunction" class="Acme\DemoBundle\Admin\CurrentFunctionAdmin">
           <tag name="sonata.admin" manager_type="orm" group="Manage Function " label="Current Function"/>
           <argument />
           <argument>Acme\DemoBundle\Entity\CurrentFunction</argument>
@@ -39,5 +39,14 @@
               <argument>AcmeDemoBundle</argument>
           </call>
       </service>
-   </services>
+           <service id="sonata.admin.userfunction" class="Acme\DemoBundle\Admin\UserFunctionAdmin">
+          <tag name="sonata.admin" manager_type="orm" group="Manage Function " label="Employee-Function"/>
+          <argument />
+          <argument>Acme\DemoBundle\Entity\UserFunction</argument>
+          <argument />
+          <call method="setTranslationDomain">
+              <argument>AcmeDemoBundle</argument>
+          </call>
+      </service>
+       </services>
 </container>

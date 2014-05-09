@@ -62,8 +62,5 @@ class CurrentFunction
     {
         return $this->nameFunction;
     }
-      public function __toString()
-   {
-    return $this->nameFunction;
-   }
+    
 }

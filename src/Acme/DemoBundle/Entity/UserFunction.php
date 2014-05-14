@@ -22,8 +22,8 @@ private $functionEmployee;
 */
 private $user;
 
-/**
-   * @ORM\Column(name="begin_date", type="date",nullable=true)
+  /**
+   * @ORM\Column(name="begin_date", type="date",nullable=false)
    */
   private $beginDate;
   /**

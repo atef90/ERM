@@ -24,6 +24,8 @@
         "knplabs/knp-menu-bundle": "1.1.*",
         "sonata-project/easy-extends-bundle": "dev-master",
         "sonata-project/user-bundle": "dev-master",
+        "lib-icu":">=4.4",
+        "avanzu/admin-theme-bundle": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [

@@ -94,12 +94,12 @@ sonata_block:
 
 sonata_admin:
     title:      ERM
-    title_logo: bundles/acmedemo/images/fancy_acme_logo.png
+    title_logo: bundles/acmedemo/img/fancy_acme_logo.png
     templates:
         # other configuration options
         search:              SonataAdminBundle:Core:search.html.twig
         search_result_block: SonataAdminBundle:Block:block_search_result.html.twig
-
+        
 sonata_user:
     security_acl: true
     manager_type: orm # can be orm or mongodb
@@ -121,3 +121,4 @@ fos_user:
 
     service:
         user_manager: sonata.user.orm.user_manager 
+

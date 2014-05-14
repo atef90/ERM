@@ -1,13 +1,14 @@
 <?php
 
 namespace Acme\DemoBundle\Entity;
-
+use Symfony\Bridge\Doctrine\Validator\Constraints as DoctrineAssert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Post
  *
  * @ORM\Table()
+ *@DoctrineAssert\UniqueEntity(fields="nameBU", message="A Speciality with same Business Unit already exists", groups={"test"})
  * @ORM\Entity
  */
 class BU

@@ -10,13 +10,23 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 
 class ServiceAdmin extends Admin
-{
+{   protected $formOptions = array(
+    'validation_groups' => 'test'
+        );
     // Fields to be shown on create/edit forms
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('nameService', 'text')
-            ->add('BU', 'entity', array('class' => 'Acme\DemoBundle\Entity\BU'))
+            ->add('nameService', 'text',array('help'=>'the title of a Service must be unique'))
+            ->add('bu', 'sonata_type_model_list', array(
+                    'label'         => 'Business Unit',
+                    'btn_add'       => 'Add BU',      //Specify a custom label
+                    'btn_list'      => 'button.list',     //which will be translated
+                    'btn_delete'    => false,             //or hide the button.
+                   
+                ), array(
+                    'placeholder' => 'No Business Unit selected'
+                ))
             //->add('dateCreation', 'entity', array('class' => 'Acme\DemoBundle\Entity\User'))
             ->add('createdAt') //if no type is specified, SonataAdminBundle tries to guess it
 

@@ -9,8 +9,9 @@ use Sonata\UserBundle\Model\UserInterface;
 use FOS\UserBundle\Model\UserManagerInterface;
 
 use Sonata\UserBundle\Admin\Entity\UserAdmin as BaseUserAdmin;
-
-class UserAdmin extends BaseUserAdmin
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
+class UserAdmin extends BaseUserAdmin 
 {
     
     protected function configureFormFields(FormMapper $formMapper)
@@ -23,33 +24,45 @@ class UserAdmin extends BaseUserAdmin
                     'required' => (!$this->getSubject() || is_null($this->getSubject()->getId()))
                    ))
                 ->add('firstname', 'text', array('required' => true))
+                //->setHelps(array(
+                 //'firstname' => $this->trans('help_post_title')
+                 // ))
                 ->add('lastname', 'text', array('required' => true))
                 ->add('createdAt','date', array('label'=>'Entered at'))
                 ->add('matricule', 'text', array('label'=>'Matricule','required' => true))
                 ->add('diploma', 'text', array('label'=>'Diploma','required' => true))
                 ->add('specialtyDiploma', 'text', array('label'=>'Speciality of Diploma','required' => true))
-                ->add('currentFunction', 'text', array('label'=>'Current Function','required' => true))
+                ->add('currentFunction', 'entity', array('label'=>'Current Function','class' => 'Acme\DemoBundle\Entity\CurrentFunction'))
+                //->add('currentFunction', 'text', array('label'=>'Current Function','required' => true))
                 ->add('enabled', null, array('required' => false))
             ->end()
             ->with('BU', array('class' => 'col-md-6'))
-                ->add('bu', 'sonata_type_model',array('label'=>'Business Unit'),
-                        array(
-                            'attr'=>array('data-sonata-select2'=>'true')
-                        )
-                    )
+              ->add('bu', 'sonata_type_model_list', array(
+                    'label'         => 'Business Unit',
+                    'btn_add'       => 'Add BU',      //Specify a custom label
+                    'btn_list'      => 'button.list',     //which will be translated
+                    'btn_delete'    => false,             //or hide the button.
+                   
+                ), array(
+                    'placeholder' => 'No Business Unit selected'
+                ))
             ->end()
             ->with('Service', array('class' => 'col-md-6'))
-            ->add('service', 'sonata_type_model',array('label'=>'Service'),
-                        array(
-                            'attr'=>array('data-sonata-select2'=>'true')
-                        )
-                    )
-                //->add('Service', 'entity', array('label'=>'Service','class' => 'Acme\DemoBundle\Entity\Service'))
+             ->add('service', 'sonata_type_model_list', array(
+                    'label'         => 'Service',
+                    'btn_add'       => 'Add Service',      //Specify a custom label
+                    'btn_list'      => 'button.list',     //which will be translated
+                    'btn_delete'    => false,             //or hide the button.
+                   
+                ), array(
+                    'placeholder' => 'No Service selected'
+                ))
             ->end()
           
 
         ;    
     }
+
      protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper

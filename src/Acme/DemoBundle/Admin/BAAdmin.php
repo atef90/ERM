@@ -11,12 +11,14 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 class BAAdmin extends Admin
 {
+    protected $formOptions = array(
+    'validation_groups' => 'test'
+        );
     // Fields to be shown on create/edit forms
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('nameBA', 'text')
-            //->add('dateCreation', 'entity', array('class' => 'Acme\DemoBundle\Entity\User'))
+            ->add('nameBA', 'text',array('help'=>'the title of a Business Area must be unique'))
             ->add('createdAt') //if no type is specified, SonataAdminBundle tries to guess it
             
         ;

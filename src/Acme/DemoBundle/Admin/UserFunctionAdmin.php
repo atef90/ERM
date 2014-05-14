@@ -15,20 +15,25 @@ class UserFunctionAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-             ->with('Employee & Function', array('class' => 'col-md-6'))
-            //->add('functionEmployee')
-            ->add('functionEmployee', 'sonata_type_model',
-					    array(
-					        'attr'=>array('data-sonata-select2'=>'true')
-					    )
-					)
-            //->add('dateCreation', 'entity', array('class' => 'Acme\DemoBundle\Entity\User'))
-            //->add('user') //if no type is specified, SonataAdminBundle tries to guess it
-            ->add('user', 'sonata_type_model',
-					    array(
-					        'attr'=>array('data-sonata-select2'=>'true')
-					    )
-					)
+            ->with('Employee & Function', array('class' => 'col-md-6'))
+            ->add('functionEmployee', 'sonata_type_model_list', array(
+                    'label'         => 'Function',
+                    'btn_add'       => 'Add Function',      //Specify a custom label
+                    'btn_list'      => 'button.list',     //which will be translated
+                    'btn_delete'    => false,             //or hide the button.
+                   
+                ), array(
+                    'placeholder' => 'No function selected'
+                ))
+            ->add('user', 'sonata_type_model_list', array(
+                    'label'         => 'Employee',
+                    'btn_add'       => 'Add Employee',      //Specify a custom label
+                    'btn_list'      => 'button.list',     //which will be translated
+                    'btn_delete'    => false,             //or hide the button.
+                   
+                ), array(
+                    'placeholder' => 'No employee selected'
+                ))
             ->add('beginDate')
             ->add('endDate')
             ->end()
@@ -50,7 +55,14 @@ class UserFunctionAdmin extends Admin
          ->add('functionEmployee')
          ->add('user')
          ->add('beginDate') 
-         ->add('endDate') 
+         ->add('endDate')
+         ->add('_action', 'actions', array('label'=>'action',
+                'actions' => array(
+                    'view' => array(),
+                    'edit' => array(),
+                    'delete' => array(),
+                )
+            ))
         ;
     }
      protected function configureShowFields(ShowMapper $showMapper)

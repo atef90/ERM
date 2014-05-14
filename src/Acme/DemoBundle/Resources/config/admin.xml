@@ -4,7 +4,7 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
         <service id="sonata.admin.ba" class="Acme\DemoBundle\Admin\BAAdmin">
-          <tag name="sonata.admin" manager_type="orm" group="Manage Business Area " label="BA"/>
+          <tag name="sonata.admin" manager_type="orm" group="Manage Business Area " label="Business Area"/>
           <argument />
           <argument>Acme\DemoBundle\Entity\BA</argument>
           <argument />
@@ -13,7 +13,7 @@
           </call>
       </service>
       <service id="sonata.admin.bu" class="Acme\DemoBundle\Admin\BUAdmin">
-          <tag name="sonata.admin" manager_type="orm" group="Manage Business Area " label="BU"/>
+          <tag name="sonata.admin" manager_type="orm" group="Manage Business Area " label="Business Unit"/>
           <argument />
           <argument>Acme\DemoBundle\Entity\BU</argument>
           <argument />

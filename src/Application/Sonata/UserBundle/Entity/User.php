@@ -14,8 +14,11 @@ class User extends BaseUser
      */
     protected $id;
     protected $matricule;
+    
     protected $diploma;
+    
     protected $specialtyDiploma;
+    
     protected $currentFunction;
    
     
@@ -89,7 +92,7 @@ public function getService()
      * Constructor
      */
     public function __construct()
-    {
+    {   parent::__construct();
         $this->userFunction = new \Doctrine\Common\Collections\ArrayCollection();
       
     }
